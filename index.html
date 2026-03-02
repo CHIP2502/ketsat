@@ -6,61 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f8f8f8; display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
-        #main-wrapper { flex: 1; }
-        .header-top { background: #d9534f; color: #fff; padding: 15px 0; text-align: center; font-weight: bold; font-size: 22px; text-transform: uppercase; }
+        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f4; display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
+        #main-wrapper { flex: 1; padding-bottom: 30px; }
+        .header-top { background: #d9534f; color: #fff; padding: 20px 0; text-align: center; font-weight: bold; font-size: 24px; text-transform: uppercase; }
         
+        /* Danh sách sản phẩm */
         .product-grid { margin-top: 20px; }
-        .product-card { background: #fff; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; border-radius: 4px; }
-        .product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: #d9534f; }
-        .product-card img { width: 100%; height: auto; border-bottom: 1px solid #f4f4f4; }
-        .product-card h6 { font-size: 14px; height: 40px; overflow: hidden; margin: 10px 0; line-height: 1.4; color: #333; font-weight: bold; }
-        .price-contact { color: #d9534f; font-weight: bold; font-size: 16px; display: block; }
+        .product-card { background: #fff; padding: 15px; margin-bottom: 25px; border: 1px solid #ddd; transition: 0.3s; cursor: pointer; border-radius: 5px; text-align: center; }
+        .product-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); border-color: #d9534f; }
+        .product-card img { width: 100%; height: auto; margin-bottom: 10px; }
+        .product-card h6 { font-size: 15px; height: 42px; overflow: hidden; margin: 10px 0; font-weight: bold; }
+        .price-contact { color: #d9534f; font-weight: bold; font-size: 17px; display: block; }
 
-        #detail-page { display: none; background: #fff; padding: 30px 15px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .back-btn { margin-bottom: 20px; cursor: pointer; color: #337ab7; font-weight: bold; display: inline-block; font-size: 16px; text-decoration: none; }
-        .price-big { color: #ff0000; font-size: 30px; font-weight: bold; display: block; margin-bottom: 20px; }
-        .btn-call { margin-bottom: 15px; font-weight: bold; text-transform: uppercase; padding: 15px; font-size: 18px; border-radius: 8px; text-decoration: none !important; color: #fff !important; }
-        #detail-img-area { border: 1px solid #f1f1f1; position: relative; border-radius: 8px; overflow: hidden; text-align: center; }
-        #detail-img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        /* Trang chi tiết */
+        #detail-page { display: none; background: #fff; padding: 30px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .back-btn { margin-bottom: 25px; cursor: pointer; color: #337ab7; font-weight: bold; display: inline-block; }
+        .price-big { color: #ff0000; font-size: 32px; font-weight: bold; display: block; margin-bottom: 25px; text-align: center; }
+        
+        /* Sửa lỗi nút gọi bị dính nhau */
+        .call-box { background: #fffafa; padding: 25px; border: 1px dashed #d9534f; border-radius: 10px; }
+        .btn-call { margin-bottom: 15px; font-weight: bold; text-transform: uppercase; padding: 18px; font-size: 18px; border-radius: 8px; display: block; width: 100%; text-align: center; color: #fff !important; text-decoration: none !important; border: none; }
+        .btn-hn { background-color: #5cb85c; } /* Màu xanh cho số 1 */
+        .btn-hcm { background-color: #4267b2; margin-bottom: 0; } /* Màu xanh dương cho số 2 */
+        
+        #detail-img-area { border: 1px solid #eee; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
 
-        footer { background: #333; color: #ccc; padding: 30px 0; margin-top: 50px; border-top: 4px solid #d9534f; width: 100%; }
-        .legal-title { color: #fff; text-transform: uppercase; font-size: 16px; margin-bottom: 15px; border-left: 3px solid #d9534f; padding-left: 10px; }
-        .legal-content p { margin-bottom: 8px; font-size: 14px; line-height: 1.6; }
-        .legal-content strong { color: #fff; }
+        /* Footer pháp lý */
+        footer { background: #2c2c2c; color: #bbb; padding: 40px 0; border-top: 5px solid #d9534f; }
+        .legal-title { color: #fff; text-transform: uppercase; font-size: 18px; margin-bottom: 20px; font-weight: bold; border-left: 4px solid #d9534f; padding-left: 15px; }
+        .legal-content p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
     </style>
 </head>
 <body>
 
     <div id="main-wrapper">
         <div class="header-top">KÉT SẮT VIỆT TIỆP CHÍNH HÃNG</div>
-
         <div class="container">
             <div id="list-page">
-                <h3 class="page-header" style="font-weight: bold; color: #444;">Sản phẩm nổi bật</h3>
+                <h3 class="page-header" style="font-weight: bold;">Danh mục sản phẩm</h3>
                 <div class="row product-grid" id="product-container"></div>
             </div>
 
             <div id="detail-page">
-                <a class="back-btn" onclick="showListPage()"><i class="glyphicon glyphicon-menu-left"></i> Quay lại danh sách</a>
+                <div class="back-btn" onclick="showListPage()"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại danh sách</div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6">
                         <div id="detail-img-area" onclick="handleCall()">
-                            <img id="detail-img" src="">
-                            <div style="position: absolute; top: 15px; left: 15px; background: rgba(217, 83, 79, 0.9); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold;">
-                                <i class="glyphicon glyphicon-earphone"></i> NHẤN ĐỂ GỌI TƯ VẤN
+                            <img id="detail-img" src="" style="width: 100%;">
+                            <div style="text-align: center; padding: 10px; background: #f9f9f9; color: #d9534f; font-weight: bold;">
+                                <i class="glyphicon glyphicon-earphone"></i> NHẤN VÀO ẢNH ĐỂ GỌI
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <h1 id="detail-title" style="font-size: 24px; margin-top: 0; color: #333; font-weight: bold; line-height: 1.4;"></h1>
+                    <div class="col-md-6">
+                        <h1 id="detail-title" style="font-size: 24px; font-weight: bold; margin-top: 0;"></h1>
                         <hr>
                         <span class="price-big">GIÁ: LIÊN HỆ</span>
-                        <div style="background: #fff9f9; padding: 20px; border: 1px dashed #d9534f; border-radius: 8px;">
-                            <p style="font-weight: bold; color: #555; margin-bottom: 15px; text-align: center;">VUI LÒNG CHỌN SỐ ĐIỆN THOẠI ĐỂ GỌI:</p>
-                            <a href="tel:0983115686" class="btn btn-success btn-block btn-lg btn-call" style="background-color: #5cb85c;">GỌI NGAY: 0983 115 686</a>
-                            <a href="tel:0392699914" class="btn btn-danger btn-block btn-lg btn-call" style="background-color: #d9534f;">GỌI NGAY: 0392 699 914</a>
-                            <p style="text-align: center; margin-top: 10px; font-style: italic; font-size: 13px; color: #888;">(Phục vụ 24/7 - Giao hàng toàn quốc)</p>
+                        <div class="call-box">
+                            <p style="font-weight: bold; text-align: center; margin-bottom: 20px;">VUI LÒNG CHỌN SỐ ĐỂ GỌI TƯ VẤN:</p>
+                            <a href="tel:0983115686" class="btn-call btn-hn">GỌI NGAY: 0983 115 686</a>
+                            <a href="tel:0392699914" class="btn-call btn-hcm">GỌI NGAY: 0392 699 914</a>
                         </div>
                     </div>
                 </div>
@@ -70,20 +75,12 @@
 
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="legal-title">THÔNG TIN PHÁP LÝ & LIÊN HỆ</div>
-                    <div class="legal-content">
-                        <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong></p>
-                        <p>Mã số thuế: <strong>0111372405</strong> | Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong></p>
-                        <p><i class="glyphicon glyphicon-map-marker"></i> Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Thành phố Hà Nội, Việt Nam</strong></p>
-                        <p><i class="glyphicon glyphicon-phone-alt"></i> Điện thoại hỗ trợ: <strong>0983 115 686 - 0392 699 914</strong></p>
-                    </div>
-                </div>
-            </div>
-            <hr style="border-color: #444;">
-            <div style="text-align: center; font-size: 12px; color: #777;">
-                © 2026 ketsat - Hệ thống bán lẻ két sắt hàng đầu Việt Nam.
+            <div class="legal-title">THÔNG TIN PHÁP LÝ & LIÊN HỆ </div>
+            <div class="legal-content">
+                <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong> </p>
+                <p>Mã số thuế: <strong>0111372405</strong> | Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong> </p>
+                <p>Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Hà Nội</strong> </p>
+                <p>Điện thoại hỗ trợ: <strong>0983 115 686 - 0392 699 914</strong> </p>
             </div>
         </div>
     </footer>
@@ -100,7 +97,15 @@
             { id: 5, title: "Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử", img: "data/images/product/small_12_2020_443_ket-sat-van-tay-thong-minh-aifeibao-hk-m-d-60-bl.jpg" },
             { id: 6, title: "Két sắt Goldbank cánh đúc GDC56", img: "data/images/product/small_10_2018_324_ket-sat-goldbank-canh-duc-gdc56.jpg" },
             { id: 7, title: "Két sắt Goldbank khóa điện tử có báo động GVE125", img: "data/images/product/small_04_2020_206_ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.jpg" },
-            { id: 8, title: "Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal", img: "data/images/product/small_05_2023_188_ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.jpg" }
+            { id: 8, title: "Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal", img: "data/images/product/small_05_2023_188_ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.jpg" },
+            { id: 9, title: "Két sắt siêu cường Việt Tiệp VFE5607 vân tay - Model 2024", img: "data/images/product/small_12_2023_676_ket-sat-sieu-cuong-viet-tiep-vfe5607-van-tay-model-moi-nhat.jpg" },
+            { id: 10, title: "Két sắt Việt Tiệp vân tay mã số VFE5007 màu ghi xanh - Model 2023", img: "data/images/product/small_09_2023_659_ket-sat-viet-tiep-van-tay-ma-so-vfe5007-mau-ghi-xanh-model-2023.jpg" },
+            { id: 11, title: "Két sắt Việt Tiệp siêu cường VE3307-B màu đen điện tử báo động", img: "data/images/product/small_08_2023_654_ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-den-dien-tu-bao-dong-model-2023.jpg" },
+            { id: 12, title: "Két sắt Việt Tiệp VBE09 điện tử - model 2022", img: "data/images/product/small_12_2022_605_ket-sat-viet-tiep-vbe09-dien-tu-model-2022.jpg" },
+            { id: 13, title: "Két sắt Việt Tiệp VBC09 khóa cơ - Model 2022", img: "data/images/product/small_12_2022_604_ket-sat-viet-tiep-vbc09-khoa-co-model-2022.jpg" },
+            { id: 14, title: "Két sắt siêu cường Việt Tiệp VE5908 điện tử - model 2023", img: "data/images/product/small_01_2023_603_ket-sat-sieu-cuong-viet-tiep-ve5908-dien-tu-model-2022.jpg" },
+            { id: 15, title: "Két sắt thả tiền ngăn kéo Việt Tiệp", img: "data/images/product/small_12_2023_675_ket-sat-viet-tiep-sieu-cuong-ve5507.jpg" },
+            { id: 16, title: "Két sắt mini Việt Tiệp khóa điện tử", img: "data/images/product/small_08_2023_654_ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-den-dien-tu-bao-dong-model-2023.jpg" }
         ];
 
         function renderList() {
@@ -109,13 +114,7 @@
             products.forEach(p => {
                 const card = document.createElement('div');
                 card.className = "col-md-3 col-sm-6 col-xs-6";
-                card.innerHTML = `
-                    <div class="product-card" onclick="showDetail(${p.id})">
-                        <img src="${p.img}" alt="${p.title}">
-                        <h6>${p.title}</h6>
-                        <span class="price-contact">Giá: Liên hệ</span>
-                    </div>
-                `;
+                card.innerHTML = `<div class="product-card" onclick="showDetail(${p.id})"><img src="${p.img}"><h6>${p.title}</h6><span class="price-contact">Giá: Liên hệ</span></div>`;
                 container.appendChild(card);
             });
         }
@@ -126,8 +125,7 @@
                 document.getElementById('list-page').style.display = 'none';
                 document.getElementById('detail-page').style.display = 'block';
                 document.getElementById('detail-title').innerText = p.title;
-                document.getElementById('detail-img').src = p.img; 
-                
+                document.getElementById('detail-img').src = p.img;
                 window.scrollTo(0, 0);
             }
         }
@@ -139,7 +137,7 @@
         }
 
         function handleCall() {
-            const choice = confirm("Vui lòng chọn số cần gọi:\n- Nhấn OK để gọi: " + phone1 + "\n- Nhấn Hủy (Cancel) để gọi: " + phone2);
+            const choice = confirm("Chọn số cần gọi tư vấn:\nOK: 0983 115 686\nCancel: 0392 699 914");
             window.location.href = choice ? "tel:" + phone1 : "tel:" + phone2;
         }
 
