@@ -1,515 +1,149 @@
-<html lang="vi" style="" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head id="Head1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Két Sắt Việt Tiệp</title>
-    <meta name="google-site-verification" content="ymPGpkrMB7_3JgeFLFZsaQZf6PAppoDBLArceurKULY">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Hệ Thống Siêu Thị Két Sắt Việt Tiệp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Siêu Thị Két Sắt Uy Tín Hàng Đầu Việt Nam | ketsat.net | Két sắt gia đình Ket sat">
-    <meta name="description" content="Ketsat.net là hệ thống bán lẻ chuyên nghiệp hàng đâu Việt Nam, cung cấp két sắt gia đình chính hãng, giá rẻ và chất lượng tốt nhất ket sat">
-    <meta name="keywords" content="két sắt, siêu thị két sắt, tủ sắt, tủ hồ sơ, ket sat, két sắt gia đình">
-    <meta name="copyright" content="ketsat.net">
-    <meta name="author" content="ketsat.net">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="rating" content="GENERAL">
-    <meta name="revisit-after" content="1 days">
-    <meta name="resource-type" content="Document">
-    <meta name="distribution" content="Global">
-    <meta property="og:site_name" content="ketsat.net">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="vi_VN">
-    <link rel="alternate" hreflang="vi-vn" href="http://ketsat.net">
-    <!-- Fonts -->
-    <link href="themes/default/css/bootstrap.min.css" rel="stylesheet">
-    <link href="themes/default/css/dropdown.css" rel="stylesheet">
-    <link href="themes/default/css/style.css" rel="stylesheet">
-    <link href="themes/default/css/responsive.css" type="text/css" media="screen" rel="stylesheet">
-    <link href="themes/default/css/menu.css" rel="stylesheet">
-    <link href="themes/default/css/flexslider.css" rel="stylesheet" type="text/css" media="screen">
-    <link href="themes/default/css/fontello.css" rel="stylesheet">
-    <link href="themes/default/css/jquery.fancybox.css" rel="stylesheet">
-    <link href="themes/default/css/owl.carousel.css" rel="stylesheet">
-    <link href="themes/default/css/owl.theme.css" rel="stylesheet">
-    <link href="themes/default/css/chosen.css" rel="stylesheet">
-    <link href="themes/default/css/jquery.mmenu.all.css" rel="stylesheet">
-    <meta name="google-site-verification" content="noRCAUI67rOk-Inv30xEVFtFrJrpz2nKtJi24D0NrZM">
-    <!-- JavaScript -->
-    <script type="text/javascript" src="themes/default/scripts/modernizr.min.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery.menu-aim.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f8f8; display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
+        #main-wrapper { flex: 1; }
+        .header-top { background: #d9534f; color: #fff; padding: 15px 0; text-align: center; font-weight: bold; font-size: 22px; text-transform: uppercase; }
+        
+        .product-grid { margin-top: 20px; }
+        .product-card { background: #fff; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; border-radius: 4px; }
+        .product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: #d9534f; }
+        .product-card img { width: 100%; height: auto; border-bottom: 1px solid #f4f4f4; }
+        .product-card h6 { font-size: 14px; height: 40px; overflow: hidden; margin: 10px 0; line-height: 1.4; color: #333; font-weight: bold; }
+        .price-contact { color: #d9534f; font-weight: bold; font-size: 16px; display: block; }
 
-    <style type="text/css">
-        .fancybox-margin {
-            margin-right: 15px;
-        }
+        #detail-page { display: none; background: #fff; padding: 30px 15px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .back-btn { margin-bottom: 20px; cursor: pointer; color: #337ab7; font-weight: bold; display: inline-block; font-size: 16px; text-decoration: none; }
+        .price-big { color: #ff0000; font-size: 30px; font-weight: bold; display: block; margin-bottom: 20px; }
+        .btn-call { margin-bottom: 15px; font-weight: bold; text-transform: uppercase; padding: 15px; font-size: 18px; border-radius: 8px; text-decoration: none !important; color: #fff !important; }
+        #detail-img-area { border: 1px solid #f1f1f1; position: relative; border-radius: 8px; overflow: hidden; text-align: center; }
+        #detail-img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+        footer { background: #333; color: #ccc; padding: 30px 0; margin-top: 50px; border-top: 4px solid #d9534f; width: 100%; }
+        .legal-title { color: #fff; text-transform: uppercase; font-size: 16px; margin-bottom: 15px; border-left: 3px solid #d9534f; padding-left: 10px; }
+        .legal-content p { margin-bottom: 8px; font-size: 14px; line-height: 1.6; }
+        .legal-content strong { color: #fff; }
     </style>
-<style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+</head>
+<body>
 
-<body class="" style=""><nav id="menu-hidden" class="menu-hidden mm-menu mm-horizontal mm-offcanvas"><ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
-            <li><a class="mm-subopen" href="#mm-1"></a><a href="ket-sat-ket-bac.html" title="Két sắt - Két bạc"><span class="submenu-title">Két sắt - Két bạc</span></a></li>
-            <li><a href="hop-dung-tien-ca-nhan.html" title="Hộp đựng tiền cá nhân"><span class="submenu-title">Hộp đựng
-                        tiền cá nhân</span></a></li>
-            <li><a href="tu-sat-ho-so-van-phong.html" title="Tủ sắt hồ sơ văn phòng"><span class="submenu-title">Tủ sắt
-                        hồ sơ văn phòng</span></a></li>
-            <li><a href="tu-sat-quan-ao-gia-dinh.html" title="Tủ sắt quần áo gia đình"><span class="submenu-title">Tủ
-                        sắt quần áo gia đình</span></a></li>
-            <li><a href="ke-sat-gia-sat.html" title="Kệ sắt giá sắt"><span class="submenu-title">Kệ sắt giá
-                        sắt</span></a></li>
-            <li><a href="giuong-sat.html" title="Giường sắt"><span class="submenu-title">Giường sắt</span></a></li>
-            <li><a href="dich-vu-sua-chua-ket-sat-tai-nha.html" title="Dịch vụ sửa chữa két sắt tại nhà"><span class="submenu-title">Dịch vụ sửa chữa két sắt tại nhà</span></a></li>
-            <li><a class="mm-subopen" href="#mm-2"></a><a href="tin-tuc.html" title="Tin tức"><span class="submenu-title">Tin tức</span></a></li>
-            <li><a class="mm-subopen" href="#mm-3"></a><a href="gioi-thieu.html" title="Giới thiệu"><span class="submenu-title">Giới thiệu</span></a></li>
-            <li><a class="mm-subopen" href="#mm-4"></a><a href="mua-hang-va-thanh-toan.html" title="Trợ giúp"><span class="submenu-title">Trợ giúp</span></a></li>
-            <li><a href="lien-he.html"><span class="submenu-title">Liên hệ</span></a></li>
-        </ul><ul class="mm-list mm-panel mm-hidden" id="mm-1">
-            <li class="mm-subtitle"><a class="mm-subclose" href="#mm-0">Két sắt - Két bạc</a></li>
-            <li><a href="ket-sat-tha-tien-ngan-keo.html" title="Két sắt thả tiền ngăn kéo">Két sắt thả tiền ngăn kéo</a>
-            </li>
-            <li><a href="ket-sat-gia-re.html" title="Két sắt giá rẻ">Két sắt giá rẻ</a></li>
-            <li><a href="ket-sat-gia-dinh.html" title="Két sắt gia đình">Két sắt gia đình</a></li>
-            <li><a href="ket-sat-hai-tang.html" title="Két sắt hai tầng">Két sắt hai tầng</a></li>
-            <li><a href="ket-sat-thong-minh.html" title="Két sắt Thông Minh">Két sắt Thông Minh</a></li>
-            <li><a href="ket-sat-khach-san-de-tu.html" title="Két sắt khách sạn để tủ">Két sắt khách sạn để tủ</a></li>
-            <li><a href="ket-sat-ngan-hang.html" title="Két sắt ngân hàng">Két sắt ngân hàng</a></li>
-            <li><a href="ket-sat-dinh-chua.html" title="Két sắt đình chùa">Két sắt đình chùa</a></li>
-            <li><a href="ket-sat-cong-duc.html" title="Két sắt công đức">Két sắt công đức</a></li>
-            <li><a href="ket-sat-khoet-noc.html" title="Két sắt khoét nóc">Két sắt khoét nóc</a></li>
-            <li><a href="ket-sat-thu-ngan.html" title="Két sắt thu ngân">Két sắt thu ngân</a></li>
-            <li><a href="ket-sat-to-dai.html" title="Két sắt to đại">Két sắt to đại</a></li>
-            <li><a href="ket-sat-mini.html" title="Két sắt mini ">Két sắt mini </a></li>
-            <li><a href="ket-sat-cong-ty.html" title="Két sắt dành cho công ty - văn phòng">Két sắt dành cho công ty -
-                    văn phòng</a></li>
-            <li><a href="ket-sat-ca-nhan-de-tu.html" title="Két sắt cá nhân để tủ">Két sắt cá nhân để tủ</a></li>
-            <li><a href="ket-sat-khoa-co-doi-ma.html" title="Két sắt khóa cơ đổi mã">Két sắt khóa cơ đổi mã</a></li>
-            <li><a href="ket-sat-khoa-dien-tu.html" title="Két sắt khóa điện tử">Két sắt khóa điện tử</a></li>
-            <li><a href="ket-sat-khoa-van-tay.html" title="Két sắt khóa vân tay">Két sắt khóa vân tay</a></li>
-            <li><a href="ket-sat-an-toan.html" title="Két sắt an toàn">Két sắt an toàn</a></li>
-            <li><a href="ket-sat-chong-chay.html" title="Két sắt chống cháy">Két sắt chống cháy</a></li>
-            <li><a href="ket-sat-bao-mat.html" title="Két sắt bảo mật">Két sắt bảo mật</a></li>
-            <li><a href="ket-sat-ban-le-trong.html" title="Két sắt bản lề trong">Két sắt bản lề trong</a></li>
-            <li><a href="ket-sat-ban-le-ngoai.html" title="Két sắt bản lề ngoài">Két sắt bản lề ngoài</a></li>
-            <li><a href="ket-sat-co-banh-xe.html" title="Két sắt có bánh xe">Két sắt có bánh xe</a></li>
-            <li><a href="ket-sat-canh-duc-cao-cap.html" title="Két sắt cánh đúc cao cấp">Két sắt cánh đúc cao cấp</a>
-            </li>
-        </ul><ul class="mm-list mm-panel mm-hidden" id="mm-2">
-            <li class="mm-subtitle"><a class="mm-subclose" href="#mm-0">Tin tức</a></li>
-            <li><a href="thong-tin-khuyen-mai.html" title="Thông tin khuyến mại">Thông tin khuyến mại</a></li>
-            <li><a href="bai-viet-ve-ket-sat-ket-bac.html" title="Bài viết về Két sắt - Két bạc">Bài viết về Két sắt -
-                    Két bạc</a></li>
-            <li><a href="huong-dan-su-dung-ket-sat.html" title="Hướng dẫn sử dụng két sắt">Hướng dẫn sử dụng két sắt</a>
-            </li>
-            <li><a href="bai-viet-ve-noi-that.html" title="Bài viết về nội thất">Bài viết về nội thất</a></li>
-            <li><a href="tin-cong-ty.html" title="Tin công ty">Tin công ty</a></li>
-        </ul><ul class="mm-list mm-panel mm-hidden" id="mm-3">
-            <li class="mm-subtitle"><a class="mm-subclose" href="#mm-0">Giới thiệu</a></li>
-            <li><a href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a></li>
-            <li><a href="ban-do-duong-di.html" title="Bản đồ đường đi">Bản đồ đường đi</a></li>
-        </ul><ul class="mm-list mm-panel mm-hidden" id="mm-4">
-            <li class="mm-subtitle"><a class="mm-subclose" href="#mm-0">Trợ giúp</a></li>
-            <li><a href="mua-hang-va-thanh-toan.html" title="Mua hàng &amp; Thanh toán">Mua hàng &amp; Thanh toán</a>
-            </li>
-            <li><a href="giao-hang-nhan-hang.html" title="Giao hàng &amp; Nhận hàng">Giao hàng &amp; Nhận hàng</a></li>
-            <li><a href="chinh-sach-bao-hanh.html" title="Chính sách bảo hành">Chính sách bảo hành</a></li>
-            <li><a href="chinh-sach-ban-hang.html" title="Chính sách bán hàng">Chính sách bán hàng</a></li>
-            <li><a href="chinh-sach-bao-mat.html" title="Chính sách bảo mật">Chính sách bảo mật</a></li>
-            <li><a href="chinh-sach-doi-tra-hang-va-hoan-tien.html" title="Chính sách đổi, trả hàng và hoàn tiền">Chính
-                    sách đổi, trả hàng và hoàn tiền</a></li>
-        </ul></nav>
-    
-    <div class="mm-page mm-slideout"><div class="mm-page mm-slideout">
-        <div class="header menu_bg">
-            <!-- Container -->
-            <div class="container">
-                <a href="#menu-hidden" class="btn-menu-hidden">&nbsp;</a>
-                <!-- Header -->
-                
-            </div>
-        </div>
+    <div id="main-wrapper">
+        <div class="header-top">KÉT SẮT VIỆT TIỆP CHÍNH HÃNG</div>
+
         <div class="container">
-            
-            <div class="row">
-                <div class="main-content col-lg-12 col-md-12 col-sm-12">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h2 class="title-block">Sản phẩm</h2>
-                            <section class="homeproduct" id="product-list">
-    <a href="/getDetails.html?product_id=1" title="Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_12_2023_675_ket-sat-viet-tiep-sieu-cuong-ve5507.jpg" alt="Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 5.600.000₫</span>
-            <span class="price">Giá KM: 4.999.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="/getDetails.html?product_id=2" title="Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_09_2023_656_ket-sat-viet-tiep-sieu-cuong-vfe5007-van-tay-ma-so-bao-dong-model-2023.jpg" alt="Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 4.800.000₫</span>
-            <span class="price">Giá KM: 4.100.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-trang-dien-tu-bao-dong-model-2023.html" title="Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_08_2023_655_ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-trang-dien-tu-bao-dong-model-2023.jpg" alt="Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 3.500.000₫</span>
-            <span class="price">Giá KM: 2.999.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-thong-minh-aifeibao-hk-md55as-van-tay-dien-tu-app-dien-thoai-.html" title="Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_11_2021_549_ket-sat-thong-minh-aifeibao-hk-md55as-van-tay-dien-tu-app-dien-thoai-.jpg" alt="Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 18.500.000₫</span>
-            <span class="price">Giá KM: 12.780.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-aifeibao-hk-m-d-60bl-van-tay-dien-tu.html" title="Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_12_2020_443_ket-sat-van-tay-thong-minh-aifeibao-hk-m-d-60-bl.jpg" alt="Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 7.500.000₫</span>
-            <span class="price">Giá KM: 6.700.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-goldbank-canh-duc-gdc56.html" title="Két sắt Goldbank cánh đúc GDC56">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_10_2018_324_ket-sat-goldbank-canh-duc-gdc56.jpg" alt="Két sắt Goldbank cánh đúc GDC56">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Goldbank cánh đúc GDC56</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 4.200.000₫</span>
-            <span class="price">Giá KM: 3.200.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.html" title="Két sắt Goldbank khóa điện tử có báo động GVE125">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_04_2020_206_ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.jpg" alt="Két sắt Goldbank khóa điện tử có báo động GVE125">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Goldbank khóa điện tử có báo động GVE125</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 5.500.000₫</span>
-            <span class="price">Giá KM: 4.600.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  
-    <a href="ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.html" title="Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal">
-      <figure>
-        <div class="product-image">
-          <img src="data/images/product/small_05_2023_188_ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.jpg" alt="Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal">
-        </div>
-        <div class="product-info">
-          <h6>Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: 7.800.000₫</span>
-            <span class="price">Giá KM: 6.800.000₫</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  </section>
-                            
-                        </div>
-                        
-                    </div>
-
-                </div>
+            <div id="list-page">
+                <h3 class="page-header" style="font-weight: bold; color: #444;">Sản phẩm nổi bật</h3>
+                <div class="row product-grid" id="product-container"></div>
             </div>
-            <footer id="footer" class="row">
-                <!-- Main Footer -->
-    <div class="main-footer col-md-12 col-sm-12 col-xs-12">
-        <div id="main-footer">
-            <h2 class="NameCom"><span>Siêu Thị Két Sắt</span></h2>
-            <div class="row">
-                <!-- Cột trái: Showroom miền Bắc -->
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <!-- <h4 class="titleLocation">Miền Bắc</h4> -->
-                    <!-- <h5 class="subtitle" style="color:#E7B500">Hà Nội: 0983 115 686</h5> -->
-                    <div class="showroom">
-                        <div class="clearfix">
-                            <!-- <div class="showpic">
-                                <img src="data/images/showroom/small_showroom-cau-giay-1009-de-la-thanh-q-ba-dinh-ha-noi.jpg" alt="KÉT PHÚ TÀI - BA ĐÌNH &amp; CẦU GIẤY: Số 1116 Đê La Thành - Q.Ba Đình - Hà Nội">
-                            </div> -->
-                            <!-- <p>KÉT PHÚ TÀI - BA ĐÌNH &amp; CẦU GIẤY: Số 1116 Đê La Thành - Q.Ba Đình - Hà Nội<br>
-                                (khoảng giữa Đại học Giao Thông Vận Tải và Bệnh viện Phụ Sản Hà Nội)<br>
-                                Tel: 0983 115 686</p>
-                        </div>
-                        <div class="clearfix">
-                            <div class="showpic">
-                                <img src="data/images/showroom/small_showroom-thanh-xuan-c10-bach-hoa-thanh-xuan-bac-mat-duong-nguyen-trai.jpg" alt="KÉT PHÚ TÀI - THANH XUÂN &amp; HÀ ĐÔNG: C10 Nguyễn Trãi">
-                            </div>
-                            <p>KÉT PHÚ TÀI - THANH XUÂN &amp; HÀ ĐÔNG: C10 Nguyễn Trãi - Cạnh bưu điện C10<br>
-                                (Từ Royal City đi thẳng xuống qua ngã tư Khuất Duy Tiến – KHÔNG XUỐNG HẦM CHUI)</p>
-                        </div>
-                        <div class="clearfix">
-                            <p>KÉT PHÚ TÀI - VĨNH QUỲNH/ THANH TRÌ: Ngã ba Quỳnh Đô - Vĩnh Quỳnh - Thanh Trì<br>
-                                (Cửa hàng Gas + két sắt Phú Tài)</p>
-                        </div>
-                        <div class="clearfix">
-                            <p>Showroom Hưng Yên: Mai Xá - Tiên Lữ - Hưng Yên</p>
-                        </div> -->
-                    </div>
-                </div>
 
-                <!-- Cột phải: Thông tin pháp lý -->
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h4 class="titleLocation">Thông tin pháp lý</h4>
-                    <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong></p>
-                    <p>Mã số thuế: <strong>0111372405</strong></p>
-                    <p>Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong></p>
-                    <p>Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Thành phố Hà Nội, Việt Nam</strong></p>
-                    <p>Điện thoại: <strong>0983 115 686<br>0392 699 914</strong></p>
-                    <!-- <p>Điện thoại: <strong>0392 699 914</strong></p> -->
+            <div id="detail-page">
+                <a class="back-btn" onclick="showListPage()"><i class="glyphicon glyphicon-menu-left"></i> Quay lại danh sách</a>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div id="detail-img-area" onclick="handleCall()">
+                            <img id="detail-img" src="">
+                            <div style="position: absolute; top: 15px; left: 15px; background: rgba(217, 83, 79, 0.9); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold;">
+                                <i class="glyphicon glyphicon-earphone"></i> NHẤN ĐỂ GỌI TƯ VẤN
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h1 id="detail-title" style="font-size: 24px; margin-top: 0; color: #333; font-weight: bold; line-height: 1.4;"></h1>
+                        <hr>
+                        <span class="price-big">GIÁ: LIÊN HỆ</span>
+                        <div style="background: #fff9f9; padding: 20px; border: 1px dashed #d9534f; border-radius: 8px;">
+                            <p style="font-weight: bold; color: #555; margin-bottom: 15px; text-align: center;">VUI LÒNG CHỌN SỐ ĐIỆN THOẠI ĐỂ GỌI:</p>
+                            <a href="tel:0983115686" class="btn btn-success btn-block btn-lg btn-call" style="background-color: #5cb85c;">GỌI NGAY: 0983 115 686</a>
+                            <a href="tel:0392699914" class="btn btn-danger btn-block btn-lg btn-call" style="background-color: #d9534f;">GỌI NGAY: 0392 699 914</a>
+                            <p style="text-align: center; margin-top: 10px; font-style: italic; font-size: 13px; color: #888;">(Phục vụ 24/7 - Giao hàng toàn quốc)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-                <!-- /Main Footer -->
-                 <script>
-const products = [
-  {
-    url: "/getDetails.html?product_id=1",
-    title: "Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024",
-    img: "data/images/product/small_12_2023_675_ket-sat-viet-tiep-sieu-cuong-ve5507.jpg",
-    alt: "Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024",
-    oldPrice: "5.600.000₫",
-    newPrice: "4.999.000₫"
-  },
-  {
-    url: "/getDetails.html?product_id=2",
-    title: "Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023",
-    img: "data/images/product/small_09_2023_656_ket-sat-viet-tiep-sieu-cuong-vfe5007-van-tay-ma-so-bao-dong-model-2023.jpg",
-    alt: "Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023",
-    oldPrice: "4.800.000₫",
-    newPrice: "4.100.000₫"
-  },
-  {
-    url: "ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-trang-dien-tu-bao-dong-model-2023.html",
-    title: "Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023",
-    img: "data/images/product/small_08_2023_655_ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-trang-dien-tu-bao-dong-model-2023.jpg",
-    alt: "Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023",
-    oldPrice: "3.500.000₫",
-    newPrice: "2.999.000₫"
-  },
-  {
-    url: "ket-sat-thong-minh-aifeibao-hk-md55as-van-tay-dien-tu-app-dien-thoai-.html",
-    title: "Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại",
-    img: "data/images/product/small_11_2021_549_ket-sat-thong-minh-aifeibao-hk-md55as-van-tay-dien-tu-app-dien-thoai-.jpg",
-    alt: "Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại",
-    oldPrice: "18.500.000₫",
-    newPrice: "12.780.000₫"
-  },
-  {
-    url: "ket-sat-aifeibao-hk-m-d-60bl-van-tay-dien-tu.html",
-    title: "Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử",
-    img: "data/images/product/small_12_2020_443_ket-sat-van-tay-thong-minh-aifeibao-hk-m-d-60-bl.jpg",
-    alt: "Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử",
-    oldPrice: "7.500.000₫",
-    newPrice: "6.700.000₫"
-  },
-  {
-    url: "ket-sat-goldbank-canh-duc-gdc56.html",
-    title: "Két sắt Goldbank cánh đúc GDC56",
-    img: "data/images/product/small_10_2018_324_ket-sat-goldbank-canh-duc-gdc56.jpg",
-    alt: "Két sắt Goldbank cánh đúc GDC56",
-    oldPrice: "4.200.000₫",
-    newPrice: "3.200.000₫"
-  },
-  {
-    url: "ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.html",
-    title: "Két sắt Goldbank khóa điện tử có báo động GVE125",
-    img: "data/images/product/small_04_2020_206_ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.jpg",
-    alt: "Két sắt Goldbank khóa điện tử có báo động GVE125",
-    oldPrice: "5.500.000₫",
-    newPrice: "4.600.000₫"
-  },
-  {
-    url: "ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.html",
-    title: "Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal",
-    img: "data/images/product/small_05_2023_188_ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.jpg",
-    alt: "Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal",
-    oldPrice: "7.800.000₫",
-    newPrice: "6.800.000₫"
-  }
-];
 
-const productList = document.getElementById("product-list");
-
-products.forEach(p => {
-  productList.innerHTML += `
-    <a href="${p.url}" title="${p.title}">
-      <figure>
-        <div class="product-image">
-          <img src="${p.img}" alt="${p.alt}">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="legal-title">THÔNG TIN PHÁP LÝ & LIÊN HỆ</div>
+                    <div class="legal-content">
+                        <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong></p>
+                        <p>Mã số thuế: <strong>0111372405</strong> | Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong></p>
+                        <p><i class="glyphicon glyphicon-map-marker"></i> Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Thành phố Hà Nội, Việt Nam</strong></p>
+                        <p><i class="glyphicon glyphicon-phone-alt"></i> Điện thoại hỗ trợ: <strong>0983 115 686 - 0392 699 914</strong></p>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: #444;">
+            <div style="text-align: center; font-size: 12px; color: #777;">
+                © 2026 ketsat - Hệ thống bán lẻ két sắt hàng đầu Việt Nam.
+            </div>
         </div>
-        <div class="product-info">
-          <h6>${p.title}</h6>
-          <div class="priceInfo">
-            <span class="old-price">Giá hãng: ${p.oldPrice}</span>
-            <span class="price">Giá KM: ${p.newPrice}</span>
-          </div>
-        </div>
-      </figure>
-    </a>
-  `;
-});
-</script>
-
-
-                <div style="clear:both; height:20px;">&nbsp;</div>
-
-                <script type="text/javascript">
-                    var i = 0;
-                    function showEmail() {
-                        i++;
-                        if (i % 2 == 1) {
-                            $('.boxEmail').show();
-                        } else {
-                            $('.boxEmail').hide();
-                        }
-                    }
-                </script>
-
-            </footer>
-            <!-- Footer -->
-        </div>
-        <div id="back-to-top" style="display: none;"><i class="icon-up-bold"></i></div>
-    </div><div id="mm-blocker" class="mm-slideout"></div></div>
-
-
-
+    </footer>
 
     <script>
-        var $menu = $(".dropdown-menu");
-        $menu.menuAim({
-            activate: activateSubmenu,
-            deactivate: deactivateSubmenu
-        });
+        const phone1 = "0983115686";
+        const phone2 = "0392699914";
 
-        function activateSubmenu(row) {
-            var $row = $(row),
-                submenuId = $row.data("submenuId"),
-                $submenu = $("#" + submenuId),
-                height = $menu.outerHeight(),
-                width = $menu.outerWidth();
+        const products = [
+            { id: 1, title: "Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024", img: "data/images/product/small_12_2023_675_ket-sat-viet-tiep-sieu-cuong-ve5507.jpg" },
+            { id: 2, title: "Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023", img: "data/images/product/small_09_2023_656_ket-sat-viet-tiep-sieu-cuong-vfe5007-van-tay-ma-so-bao-dong-model-2023.jpg" },
+            { id: 3, title: "Két sắt Việt Tiệp siêu cường VE3307-B màu trắng điện tử báo động - Model 2023", img: "data/images/product/small_08_2023_655_ket-sat-viet-tiep-sieu-cuong-ve3307-b-mau-trang-dien-tu-bao-dong-model-2023.jpg" },
+            { id: 4, title: "Két sắt Thông minh Aifeibao HK/MD55AS Vân tay Điện tử App điện thoại", img: "data/images/product/small_11_2021_549_ket-sat-thong-minh-aifeibao-hk-md55as-van-tay-dien-tu-app-dien-thoai-.jpg" },
+            { id: 5, title: "Két sắt Aifeibao HK-M/D-60-BL vân tay điện tử", img: "data/images/product/small_12_2020_443_ket-sat-van-tay-thong-minh-aifeibao-hk-m-d-60-bl.jpg" },
+            { id: 6, title: "Két sắt Goldbank cánh đúc GDC56", img: "data/images/product/small_10_2018_324_ket-sat-goldbank-canh-duc-gdc56.jpg" },
+            { id: 7, title: "Két sắt Goldbank khóa điện tử có báo động GVE125", img: "data/images/product/small_04_2020_206_ket-sat-goldbank-khoa-dien-tu-co-bao-dong-gve125.jpg" },
+            { id: 8, title: "Két sắt Hòa Phát The One xuất khẩu có báo động KS110-Royal", img: "data/images/product/small_05_2023_188_ket-sat-hoa-phat-xuat-khau-co-bao-dong-ks110-royal.jpg" }
+        ];
 
-            // Show the submenu
-            $submenu.css({
-                display: "block",
-                top: -1,
-                left: width - 3,  // main should overlay submenu
-                height: height  // padding for main dropdown's arrow
+        function renderList() {
+            const container = document.getElementById('product-container');
+            container.innerHTML = ""; 
+            products.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "col-md-3 col-sm-6 col-xs-6";
+                card.innerHTML = `
+                    <div class="product-card" onclick="showDetail(${p.id})">
+                        <img src="${p.img}" alt="${p.title}">
+                        <h6>${p.title}</h6>
+                        <span class="price-contact">Giá: Liên hệ</span>
+                    </div>
+                `;
+                container.appendChild(card);
             });
-
-            // Keep the currently activated row's highlighted look
-            $row.find("a").addClass("maintainHover");
         }
 
-        function deactivateSubmenu(row) {
-            var $row = $(row),
-                submenuId = $row.data("submenuId"),
-                $submenu = $("#" + submenuId);
-
-            // Hide the submenu and remove the row's highlighted look
-            $submenu.css("display", "none");
-            $row.find("a").removeClass("maintainHover");
-        }
-
-        $(".dropdown-menu li").click(function (e) {
-            e.stopPropagation();
-        });
-
-        $(document).click(function () {
-            $(".popover").css("display", "none");
-            $("a.maintainHover").removeClass("maintainHover");
-        });
-
-        $(".dropdown-toggle").mouseover(function () {
-            if (!$(this).parent().hasClass("open")) {
-                $(this).trigger("click");
+        function showDetail(id) {
+            const p = products.find(item => item.id === id);
+            if (p) {
+                document.getElementById('list-page').style.display = 'none';
+                document.getElementById('detail-page').style.display = 'block';
+                document.getElementById('detail-title').innerText = p.title;
+                document.getElementById('detail-img').src = p.img; 
+                
+                window.scrollTo(0, 0);
             }
-        });
+        }
+
+        function showListPage() {
+            document.getElementById('detail-page').style.display = 'none';
+            document.getElementById('list-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function handleCall() {
+            const choice = confirm("Vui lòng chọn số cần gọi:\n- Nhấn OK để gọi: " + phone1 + "\n- Nhấn Hủy (Cancel) để gọi: " + phone2);
+            window.location.href = choice ? "tel:" + phone1 : "tel:" + phone2;
+        }
+
+        renderList();
     </script>
-    <script>
-        $(document).ready(function () {
-            $("nav#menu-hidden").mmenu();
-        });
-    </script>
-
-    <!-- Container -->
-    <script type="text/javascript" src="themes/default/scripts/jquery.mmenu.min.all.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery.raty.min.js"></script>
-    <script type="text/javascript" src="themes/default/scripts/jquery.dropdown.js"></script>
-    <!-- FlexSlider -->
-    <script defer="" src="themes/default/scripts/flexslider.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.flexslider').flexslider({
-                animation: 'fade',
-                controlsContainer: '.flexslider'
-            });
-        });
-    </script>
-    <script src="themes/default/scripts/style.js" type="text/javascript"></script>
-
-    <!-- FancyBox -->
-    <script src="themes/default/scripts/jquery.fancybox.pack.js"></script>
-    <!-- Owl Carousel -->
-    <script src="themes/default/scripts/owl.carousel.min.js"></script>
-    <!-- Cloud Zoom -->
-    <!-- SelectJS -->
-    <script src="themes/default/scripts/chosen.jquery.min.js" type="text/javascript"></script>
-    <!-- Main JS -->
-    <script src="themes/default/scripts/bootstrap.min.js"></script>
-    <script src="themes/default/scripts/main-script.js"></script><script src="../scripts/tinynav.min.js" type="text/javascript"></script>
-    <script src="../scripts/tinynav.min.js" type="text/javascript"></script>
-    
-
-
-<div id="mm-blocker" class="mm-slideout"></div></body></html>
+</body>
+</html>
