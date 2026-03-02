@@ -2,70 +2,102 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Hệ Thống Siêu Thị Két Sắt Việt Tiệp</title>
+    <title>Hệ Thống Siêu Thị Két Sắt Việt Tiệp - Chính Hãng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f4; display: flex; flex-direction: column; min-height: 100vh; margin: 0; }
-        #main-wrapper { flex: 1; padding-bottom: 30px; }
-        .header-top { background: #d9534f; color: #fff; padding: 20px 0; text-align: center; font-weight: bold; font-size: 24px; text-transform: uppercase; }
+        :root { --primary-color: #d9534f; --dark-color: #333; --light-bg: #f8f8f8; }
+        body { font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--light-bg); margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* Danh sách sản phẩm */
-        .product-grid { margin-top: 20px; }
-        .product-card { background: #fff; padding: 15px; margin-bottom: 25px; border: 1px solid #ddd; transition: 0.3s; cursor: pointer; border-radius: 5px; text-align: center; }
-        .product-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); border-color: #d9534f; }
-        .product-card img { width: 100%; height: auto; margin-bottom: 10px; }
-        .product-card h6 { font-size: 15px; height: 42px; overflow: hidden; margin: 10px 0; font-weight: bold; }
-        .price-contact { color: #d9534f; font-weight: bold; font-size: 17px; display: block; }
+        /* HEADER CẢI TIẾN */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky; top: 0; z-index: 1000; }
+        .top-bar { background: var(--dark-color); color: #ddd; padding: 5px 0; font-size: 12px; }
+        .main-header { padding: 15px 0; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary-color); text-decoration: none !important; }
+        .logo span { color: var(--dark-color); }
+        .header-contact { text-align: right; }
+        .header-contact b { color: var(--primary-color); font-size: 16px; }
+        
+        #main-wrapper { flex: 1; padding: 20px 0; }
+        
+        /* DANH SÁCH SẢN PHẨM */
+        .product-card { background: #fff; padding: 15px; margin-bottom: 25px; border: 1px solid #eee; transition: all 0.3s ease; cursor: pointer; border-radius: 8px; text-align: center; position: relative; }
+        .product-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.1); transform: translateY(-5px); border-color: var(--primary-color); }
+        .product-card img { width: 100%; height: auto; margin-bottom: 15px; border-radius: 4px; }
+        .product-card h6 { font-size: 14px; height: 42px; overflow: hidden; margin: 10px 0; font-weight: 600; color: #333; line-height: 1.5; }
+        .price-contact { color: var(--primary-color); font-weight: bold; font-size: 16px; border: 1px solid var(--primary-color); padding: 5px; border-radius: 4px; display: inline-block; width: 100%; }
 
-        /* Trang chi tiết */
-        #detail-page { display: none; background: #fff; padding: 30px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .back-btn { margin-bottom: 25px; cursor: pointer; color: #337ab7; font-weight: bold; display: inline-block; }
-        .price-big { color: #ff0000; font-size: 32px; font-weight: bold; display: block; margin-bottom: 25px; text-align: center; }
+        /* TRANG CHI TIẾT */
+        #detail-page { display: none; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .back-btn { margin-bottom: 20px; cursor: pointer; color: #666; font-weight: 600; display: inline-flex; align-items: center; transition: 0.2s; }
+        .back-btn:hover { color: var(--primary-color); }
+        .price-big { color: var(--primary-color); font-size: 36px; font-weight: 800; margin-bottom: 25px; display: block; text-align: center; }
         
-        /* Sửa lỗi nút gọi bị dính nhau */
-        .call-box { background: #fffafa; padding: 25px; border: 1px dashed #d9534f; border-radius: 10px; }
-        .btn-call { margin-bottom: 15px; font-weight: bold; text-transform: uppercase; padding: 18px; font-size: 18px; border-radius: 8px; display: block; width: 100%; text-align: center; color: #fff !important; text-decoration: none !important; border: none; }
-        .btn-hn { background-color: #5cb85c; } /* Màu xanh cho số 1 */
-        .btn-hcm { background-color: #4267b2; margin-bottom: 0; } /* Màu xanh dương cho số 2 */
+        .call-box { background: #fff5f5; padding: 25px; border: 2px dashed var(--primary-color); border-radius: 12px; }
+        .btn-call { font-weight: bold; text-transform: uppercase; padding: 18px; font-size: 17px; border-radius: 8px; display: block; width: 100%; text-align: center; color: #fff !important; text-decoration: none !important; margin-bottom: 15px; transition: 0.3s; border: none; }
+        .btn-hn { background: #449d44; box-shadow: 0 4px #367c36; }
+        .btn-hn:active { transform: translateY(2px); box-shadow: 0 2px #367c36; }
+        .btn-hcm { background: #c9302c; box-shadow: 0 4px #ac2925; margin-bottom: 0; }
+        .btn-hcm:active { transform: translateY(2px); box-shadow: 0 2px #ac2925; }
         
-        #detail-img-area { border: 1px solid #eee; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+        #detail-img-area { border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; cursor: zoom-in; }
 
-        /* Footer pháp lý */
-        footer { background: #2c2c2c; color: #bbb; padding: 40px 0; border-top: 5px solid #d9534f; }
-        .legal-title { color: #fff; text-transform: uppercase; font-size: 18px; margin-bottom: 20px; font-weight: bold; border-left: 4px solid #d9534f; padding-left: 15px; }
-        .legal-content p { margin-bottom: 10px; font-size: 15px; line-height: 1.7; }
+        /* FOOTER */
+        footer { background: #222; color: #aaa; padding: 50px 0 20px; margin-top: 60px; border-top: 5px solid var(--primary-color); }
+        .legal-title { color: #fff; text-transform: uppercase; font-size: 18px; margin-bottom: 20px; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #444; }
+        .legal-content p { margin-bottom: 12px; font-size: 14px; line-height: 1.8; }
+        .legal-content i { color: var(--primary-color); margin-right: 8px; }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <span class="pull-left">Chào mừng bạn đến với Két sắt Việt Tiệp chính hãng</span>
+                <span class="pull-right hidden-xs">Miễn phí vận chuyển nội thành Hà Nội</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-header">
+                <a href="javascript:void(0)" onclick="showListPage()" class="logo">KÉT SẮT <span>VIỆT TIỆP</span></a>
+                <div class="header-contact hidden-xs">
+                    Tư vấn miễn phí: <br>
+                    <b>0983 115 686 - 0392 699 914</b>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div id="main-wrapper">
-        <div class="header-top">KÉT SẮT VIỆT TIỆP CHÍNH HÃNG</div>
         <div class="container">
             <div id="list-page">
-                <h3 class="page-header" style="font-weight: bold;">Danh mục sản phẩm</h3>
-                <div class="row product-grid" id="product-container"></div>
+                <div class="row" id="product-container"></div>
             </div>
 
             <div id="detail-page">
-                <div class="back-btn" onclick="showListPage()"><i class="glyphicon glyphicon-chevron-left"></i> Quay lại danh sách</div>
+                <div class="back-btn" onclick="showListPage()"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; QUAY LẠI DANH SÁCH</div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div id="detail-img-area" onclick="handleCall()">
                             <img id="detail-img" src="" style="width: 100%;">
-                            <div style="text-align: center; padding: 10px; background: #f9f9f9; color: #d9534f; font-weight: bold;">
-                                <i class="glyphicon glyphicon-earphone"></i> NHẤN VÀO ẢNH ĐỂ GỌI
+                            <div style="text-align: center; padding: 15px; background: #eee; font-weight: bold; color: #444;">
+                                <i class="glyphicon glyphicon-search"></i> Click vào ảnh để gọi tư vấn nhanh
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h1 id="detail-title" style="font-size: 24px; font-weight: bold; margin-top: 0;"></h1>
-                        <hr>
+                    <div class="col-md-6 col-sm-12">
+                        <h1 id="detail-title" style="font-size: 26px; font-weight: bold; margin-bottom: 15px; line-height: 1.4;"></h1>
                         <span class="price-big">GIÁ: LIÊN HỆ</span>
                         <div class="call-box">
-                            <p style="font-weight: bold; text-align: center; margin-bottom: 20px;">VUI LÒNG CHỌN SỐ ĐỂ GỌI TƯ VẤN:</p>
-                            <a href="tel:0983115686" class="btn-call btn-hn">GỌI NGAY: 0983 115 686</a>
-                            <a href="tel:0392699914" class="btn-call btn-hcm">GỌI NGAY: 0392 699 914</a>
+                            <p style="font-weight: bold; text-align: center; margin-bottom: 20px; color: #333;">VUI LÒNG CHỌN SỐ ĐỂ KẾT NỐI NGAY:</p>
+                            <a href="tel:0983115686" class="btn-call btn-hn"><i class="glyphicon glyphicon-earphone"></i> 0983 115 686</a>
+                            <a href="tel:0392699914" class="btn-call btn-hcm"><i class="glyphicon glyphicon-earphone"></i> 0392 699 914</a>
+                        </div>
+                        <div style="margin-top: 20px; color: #666; line-height: 1.6;">
+                            <p><i class="glyphicon glyphicon-ok" style="color: green;"></i> Cam kết hàng chính hãng Việt Tiệp 100%</p>
+                            <p><i class="glyphicon glyphicon-ok" style="color: green;"></i> Bảo hành 5 năm tại nhà</p>
+                            <p><i class="glyphicon glyphicon-ok" style="color: green;"></i> Đổi trả trong vòng 7 ngày nếu có lỗi</p>
                         </div>
                     </div>
                 </div>
@@ -75,20 +107,24 @@
 
     <footer>
         <div class="container">
-            <div class="legal-title">THÔNG TIN PHÁP LÝ & LIÊN HỆ </div>
-            <div class="legal-content">
-                <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong> </p>
-                <p>Mã số thuế: <strong>0111372405</strong> | Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong> </p>
-                <p>Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Hà Nội</strong> </p>
-                <p>Điện thoại hỗ trợ: <strong>0983 115 686 <br> 0392 699 914</strong> </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="legal-title">THÔNG TIN PHÁP LÝ & LIÊN HỆ</div>
+                    <div class="legal-content">
+                        <p><strong>CÔNG TY TNHH THƯƠNG MẠI VÀ SẢN XUẤT KÉT SẮT VIỆT TIỆP VN</strong></p>
+                        <p><i class="glyphicon glyphicon-tag"></i> Mã số thuế: <strong>0111372405</strong> | Giấy chứng nhận kinh doanh số: <strong>01U8003501</strong></p>
+                        <p><i class="glyphicon glyphicon-map-marker"></i> Địa chỉ: <strong>Số nhà 20, ngõ 31 thôn Đại Tự, Xã Hoài Đức, Thành phố Hà Nội, Việt Nam</strong></p>
+                        <p><i class="glyphicon glyphicon-phone-alt"></i> Điện thoại hỗ trợ: <strong>0983 115 686 - 0392 699 914</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; font-size: 13px;">
+                © 2026 ketsat - Hệ thống phân phối két sắt Việt Tiệp toàn quốc.
             </div>
         </div>
     </footer>
 
     <script>
-        const phone1 = "0983115686";
-        const phone2 = "0392699914";
-
         const products = [
             { id: 1, title: "Két sắt Việt Tiệp siêu cường VE5607 mã số điện tử - Model 2024", img: "data/images/product/small_12_2023_675_ket-sat-viet-tiep-sieu-cuong-ve5507.jpg" },
             { id: 2, title: "Két sắt Việt Tiệp siêu cường VFE5007 vân tay mã số báo động - Model 2023", img: "data/images/product/small_09_2023_656_ket-sat-viet-tiep-sieu-cuong-vfe5007-van-tay-ma-so-bao-dong-model-2023.jpg" },
@@ -114,7 +150,13 @@
             products.forEach(p => {
                 const card = document.createElement('div');
                 card.className = "col-md-3 col-sm-6 col-xs-6";
-                card.innerHTML = `<div class="product-card" onclick="showDetail(${p.id})"><img src="${p.img}"><h6>${p.title}</h6><span class="price-contact">Giá: Liên hệ</span></div>`;
+                card.innerHTML = `
+                    <div class="product-card" onclick="showDetail(${p.id})">
+                        <img src="${p.img}">
+                        <h6>${p.title}</h6>
+                        <span class="price-contact">LIÊN HỆ</span>
+                    </div>
+                `;
                 container.appendChild(card);
             });
         }
@@ -137,8 +179,8 @@
         }
 
         function handleCall() {
-            const choice = confirm("Chọn số cần gọi tư vấn:\nOK: 0983 115 686\nCancel: 0392 699 914");
-            window.location.href = choice ? "tel:" + phone1 : "tel:" + phone2;
+            const choice = confirm("Chọn số điện thoại hỗ trợ nhanh:\n- Nhấn OK để gọi 0983 115 686\n- Nhấn Cancel để gọi 0392 699 914");
+            window.location.href = choice ? "tel:0983115686" : "tel:0392699914";
         }
 
         renderList();
