@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:config|src|partials|database)(?:/|$) - [R=404,L,NC]
+</IfModule>
+
+<FilesMatch "\.(?:sqlite|sqlite-shm|sqlite-wal)$">
+    Require all denied
+</FilesMatch>
